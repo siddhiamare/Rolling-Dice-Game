@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Roll Die App </title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff); 
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h1 {
+      color: white;
+      margin: bottom 40px;
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 25px;
+      border-radius: 15px;
+      background: white;
+      padding: 15px;
+      box-shadow: 0 4px 15 px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: none;
+      background-color: #1ea873f0;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d0b9ca;
+    }
+    p {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Roll The Dice 🎲</h1>
+
+  <!-- Dice image -->
+  <img id="die" src="d1.png" alt="Die face">
+
+  <button onclick="rollDie()">Roll Dice</button>
+  <p id="result"></p>
+
+  <script>
+    function rollDie() {
+      var roll = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("die").src = "d" + roll + ".png";
+      document.getElementById("result").innerHTML = "You rolled a " + roll + "!";
+    }
+  </script>
+</body>
+</html>
